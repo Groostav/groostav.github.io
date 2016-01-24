@@ -18,28 +18,15 @@
   </head>
   <body>
     <textarea id="source">
-
-class: center, middle
-
-# Title
-
----
-
-# Agenda
-
-1. Introduction
-2. Deep-dive
-3. ...
-
----
-
-# Introduction
-
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
-    </script>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
     <script>
-      var slideshow = remark.create();
+      var contentURL = 'https://raw.githubusercontent.com/Groostav/CMPT886-Paper-1/master/README.md';
+      $.get(contentURL, function(data) {
+        $('#source').html(data);
+        var slideshow = remark.create();
+     });
     </script>
   </body>
 </html>
